@@ -15,10 +15,9 @@ const Index = () => {
       {/* Hero */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
         style={{
-          background:
-            "linear-gradient(135deg, hsl(270 60% 20%) 0%, hsl(275 70% 35%) 50%, hsl(280 60% 45%) 100%)",
+          backgroundImage: `url(${heroBg})`,
         }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(275_80%_60%_/_0.3),_transparent_60%)]" />
