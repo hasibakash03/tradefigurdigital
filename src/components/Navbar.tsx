@@ -42,7 +42,7 @@ const Navbar = () => {
           <a
             href="#hero"
             onClick={(e) => { e.preventDefault(); scrollTo("#hero"); }}
-            className="text-xl font-black tracking-widest text-foreground"
+            className="text-xl font-black tracking-widest text-accent"
           >
             TRADEFIGUR
           </a>
