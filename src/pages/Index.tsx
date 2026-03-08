@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Globe, Shield, TrendingUp, Users, Zap } from "lucide-react";
+import { ArrowRight, Search, Target, Layers, Rocket } from "lucide-react";
 
 const Index = () => {
   const scrollTo = (id: string) => {
@@ -23,36 +23,28 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(275_80%_60%_/_0.3),_transparent_60%)]" />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-white/60 mb-6">
-            Global Trade Intelligence
+            Strategic Growth Consultancy
           </p>
           <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6">
-            Navigate Global Trade
+            Your business doesn't have
+            <br />
+            a marketing problem.
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-              with Precision
+              It has a strategy problem.
             </span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light">
-            Real-time compliance, market intelligence, and strategic advisory for enterprises operating across borders.
+            Most companies are running ads, posting content, and redesigning logos — but without clear positioning or a real growth strategy. That's why the marketing doesn't convert.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 px-8 text-base font-semibold"
-              onClick={() => scrollTo("#cta")}
-            >
-              Book a Strategy Call
-              <ArrowRight className="ml-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 px-8 text-base"
-              onClick={() => scrollTo("#solution")}
-            >
-              Explore Solutions
-            </Button>
-          </div>
+          <Button
+            size="lg"
+            className="bg-white text-primary hover:bg-white/90 px-8 text-base font-semibold"
+            onClick={() => scrollTo("#cta")}
+          >
+            Book a Strategy Call
+            <ArrowRight className="ml-1" />
+          </Button>
         </div>
       </section>
 
@@ -60,39 +52,62 @@ const Index = () => {
       <section id="problem" className="py-24 md:py-32 px-6">
         <div className="max-w-5xl mx-auto">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-accent mb-4">
-            The Challenge
+            The Problem
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
-            Global trade is a maze of
-            <br className="hidden md:block" /> regulations and risk
+            The Real Reason Most
+            <br className="hidden md:block" /> Marketing Doesn't Work
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {[
-              {
-                icon: Globe,
-                title: "Complex Regulations",
-                desc: "Navigating hundreds of jurisdictions with constantly evolving trade policies and tariffs.",
-              },
-              {
-                icon: Shield,
-                title: "Compliance Risk",
-                desc: "One misstep in sanctions screening or export controls can mean millions in penalties.",
-              },
-              {
-                icon: TrendingUp,
-                title: "Market Volatility",
-                desc: "Supply chain disruptions and geopolitical shifts create unpredictable market conditions.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="p-8 rounded-2xl bg-card border border-border hover:border-accent/30 transition-colors"
-              >
-                <item.icon className="w-10 h-10 text-accent mb-5" />
-                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
+            {/* Symptoms */}
+            <div className="p-8 rounded-2xl bg-card border border-border">
+              <p className="text-sm font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-6">
+                What it looks like
+              </p>
+              <ul className="space-y-4 text-foreground">
+                {[
+                  "Ads are running.",
+                  "Content is being posted.",
+                  "Designs look nice.",
+                ].map((item) => (
+                  <li key={item} className="text-lg">{item}</li>
+                ))}
+              </ul>
+              <div className="mt-6 pt-6 border-t border-border space-y-3">
+                {[
+                  "Yet growth feels slow.",
+                  "Leads are inconsistent.",
+                  "Sales are unpredictable.",
+                  "The brand doesn't stand out.",
+                ].map((item) => (
+                  <p key={item} className="text-muted-foreground">{item}</p>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Root causes */}
+            <div className="p-8 rounded-2xl bg-card border border-accent/30">
+              <p className="text-sm font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+                The real cause
+              </p>
+              <p className="text-lg text-foreground mb-6">
+                The real problem isn't marketing execution.
+                <br />
+                <span className="font-bold">It's the lack of clarity behind it.</span>
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "No clear positioning.",
+                  "No strong brand foundation.",
+                  "No defined market advantage.",
+                ].map((item) => (
+                  <li key={item} className="text-muted-foreground text-lg">{item}</li>
+                ))}
+              </ul>
+              <p className="mt-6 pt-6 border-t border-border text-foreground font-semibold">
+                So every campaign feels like guesswork.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -108,27 +123,31 @@ const Index = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-accent mb-4">
-            Our Insight
+            The Insight
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
-            Data-driven decisions win in global trade
+            More Marketing Isn't
+            <br className="hidden md:block" /> The Solution
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            The companies that thrive aren't just reacting to trade shifts — they're anticipating them.
-            We combine deep regulatory expertise with real-time data to give you an unfair advantage.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+            Most companies think the answer is simple: Run more ads. Post more content. Hire another agency.
           </p>
-          <div className="grid sm:grid-cols-3 gap-8">
-            {[
-              { num: "150+", label: "Countries Covered" },
-              { num: "99.7%", label: "Compliance Rate" },
-              { num: "$2.4B", label: "Trade Facilitated" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-4xl md:text-5xl font-black text-primary">{stat.num}</p>
-                <p className="text-sm text-muted-foreground mt-2 font-medium">{stat.label}</p>
-              </div>
-            ))}
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+            But more activity doesn't fix a weak strategy.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+            <div className="p-6 rounded-2xl border border-border bg-card">
+              <p className="text-foreground font-semibold">If your positioning is unclear,</p>
+              <p className="text-muted-foreground mt-1">marketing becomes noise.</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-border bg-card">
+              <p className="text-foreground font-semibold">If your brand is generic,</p>
+              <p className="text-muted-foreground mt-1">customers ignore it.</p>
+            </div>
           </div>
+          <p className="text-xl md:text-2xl font-bold text-primary">
+            What businesses actually need: a clear strategy that makes marketing work.
+          </p>
         </div>
       </section>
 
@@ -136,32 +155,36 @@ const Index = () => {
       <section id="solution" className="py-24 md:py-32 px-6">
         <div className="max-w-5xl mx-auto">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-accent mb-4">
-            Solutions
+            The Solution
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-12 leading-tight">
-            Everything you need to trade globally
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            Tradefigur Builds The Strategy
+            <br className="hidden md:block" /> Behind Growth
           </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mb-12 leading-relaxed">
+            We don't start with ads. We don't start with design. We start with understanding the business — your market, your competitors, your positioning. Then we design the strategic foundation that makes marketing effective.
+          </p>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: BarChart3,
-                title: "Trade Analytics Platform",
-                desc: "Real-time dashboards tracking tariffs, duties, and trade flows across your entire supply chain.",
+                icon: Search,
+                title: "Market Analysis",
+                desc: "Deep research into your market landscape, customer behavior, and competitive dynamics.",
               },
               {
-                icon: Shield,
-                title: "Compliance Engine",
-                desc: "Automated screening against global sanctions lists, denied parties, and export control regulations.",
+                icon: Target,
+                title: "Strategic Positioning",
+                desc: "Define what makes your brand different, valuable, and impossible to ignore.",
               },
               {
-                icon: Users,
-                title: "Advisory Services",
-                desc: "Dedicated trade specialists who understand your markets and keep you ahead of regulatory changes.",
+                icon: Layers,
+                title: "Brand Foundation",
+                desc: "Messaging frameworks, identity direction, and brand strategy that creates clarity.",
               },
               {
-                icon: Zap,
-                title: "Market Intelligence",
-                desc: "AI-powered insights on emerging opportunities, risk factors, and competitive positioning.",
+                icon: Rocket,
+                title: "Growth System Design",
+                desc: "A marketing system engineered to generate consistent, predictable demand.",
               },
             ].map((item) => (
               <div
@@ -174,6 +197,9 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <p className="text-center text-lg font-semibold text-foreground mt-12">
+            Once the strategy is clear, execution becomes simple.
+          </p>
         </div>
       </section>
 
@@ -188,17 +214,18 @@ const Index = () => {
       >
         <div className="max-w-5xl mx-auto">
           <p className="text-sm font-semibold tracking-[0.3em] uppercase text-white/50 mb-4">
-            How It Works
+            The Method
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 leading-tight">
-            From complexity to clarity
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            The Tradefigur Method
           </h2>
+          <p className="text-lg text-white/60 mb-16">Our process is simple and structured.</p>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Discovery", desc: "We map your trade operations and identify compliance gaps." },
-              { step: "02", title: "Strategy", desc: "Custom roadmap aligned with your markets and growth plans." },
-              { step: "03", title: "Integration", desc: "Deploy our platform and connect to your existing systems." },
-              { step: "04", title: "Optimize", desc: "Continuous monitoring, reporting, and strategic refinement." },
+              { step: "01", title: "Market Intelligence", desc: "We analyze your market, customers, and competitors." },
+              { step: "02", title: "Strategic Positioning", desc: "We identify what makes your brand different and valuable." },
+              { step: "03", title: "Brand Foundation", desc: "We define your messaging, identity direction, and brand strategy." },
+              { step: "04", title: "Growth System Design", desc: "We build the marketing system designed to generate consistent demand." },
             ].map((item) => (
               <div key={item.step} className="text-center md:text-left">
                 <p className="text-5xl font-black text-white/15 mb-4">{item.step}</p>
@@ -207,6 +234,9 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <p className="text-white/50 text-center mt-16 text-sm max-w-lg mx-auto">
+            Execution partners then bring the strategy to life. But the thinking starts here.
+          </p>
         </div>
       </section>
 
@@ -214,21 +244,19 @@ const Index = () => {
       <section id="authority" className="py-24 md:py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-accent mb-4">
-            Why Tradefigur
+            The Principle
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
-            Trusted by industry leaders
+            Strategy Before Execution
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Our team combines decades of trade law expertise with cutting-edge technology.
-            We've helped enterprises across 6 continents navigate the most complex trade environments.
+            Many agencies start with design. Others start with ads. But execution without strategy is expensive experimentation. The companies that grow consistently all start with the same thing: <span className="text-foreground font-semibold">Clarity.</span>
           </p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-3 gap-6 mb-12">
             {[
-              "Fortune 500 Clients",
-              "ISO 27001 Certified",
-              "24/7 Global Support",
-              "15+ Year Track Record",
+              "Clear Positioning",
+              "Clear Messaging",
+              "Clear Strategy",
             ].map((badge) => (
               <div
                 key={badge}
@@ -238,6 +266,9 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            We help businesses move from random marketing to intentional growth systems.
+          </p>
         </div>
       </section>
 
@@ -252,11 +283,14 @@ const Index = () => {
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-            Ready to simplify
-            <br /> global trade?
+            Ready To Fix The Real
+            <br /> Growth Problem?
           </h2>
-          <p className="text-lg text-white/70 mb-10 max-w-xl mx-auto">
-            Book a free strategy session with our trade experts and discover how Tradefigur can transform your operations.
+          <p className="text-lg text-white/70 mb-4 max-w-xl mx-auto">
+            If your business is already running but growth feels inconsistent, the first step is strategy.
+          </p>
+          <p className="text-white/50 mb-10 max-w-xl mx-auto">
+            We'll analyze your business, identify the gaps, and show you where growth is actually coming from.
           </p>
           <Button
             size="lg"
