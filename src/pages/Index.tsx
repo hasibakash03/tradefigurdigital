@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Target, Layers, Rocket } from "lucide-react";
+import heroBg from "@/assets/hero-bg.png";
 
 const Index = () => {
   const scrollTo = (id: string) => {
